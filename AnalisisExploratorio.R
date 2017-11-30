@@ -56,3 +56,23 @@ qplot(meses,montos.ano.mes.ord$`1987`)
 qplot(meses,montos.ano.mes.ord$`1988`)
 qplot(meses,montos.ano.mes.ord$`1989`)
 qplot(meses,montos.ano.mes.ord$`1990`)
+
+a1980<-c()
+for(i in 1:166){
+  a1980[i]<-data.claims$LossinDKM[i]
+}
+a1980.ord<-sort(a1980,decreasing = TRUE)
+a1980.ord
+
+a1981<-c()
+for(i in 167:(166+length(subset(data.claims$LossinDKM,data.claims$Year==(1981))))){
+  a1981[(i-166)]<-data.claims$LossinDKM[i]
+}
+a1981
+a1981.ord<-sort(a1981,decreasing = TRUE)
+hist(a1981.ord,breaks = 150)
+a1981.ord
+
+length(subset(data.claims$LossinDKM,data.claims$Year==(1980)))
+
+hist(a1980.ord,breaks = 150)
